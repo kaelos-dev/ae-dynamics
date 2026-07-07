@@ -45,17 +45,21 @@ minecraft {
 
         client {
             property 'forge.enabledGameTestNamespaces', mod_id
+
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            property 'mixin.env.refMapPointingTo', 'mixins.aedynamics.refmap.json'
+            args '--mixin.config', 'mixins.aedynamics.json'
         }
 
         server {
             property 'forge.enabledGameTestNamespaces', mod_id
-            args '--nogui'
+            args '--nogui', '--mixin.config', 'mixins.aedynamics.json'
         }
 
         gameTestServer {
             property 'forge.enabledGameTestNamespaces', mod_id
+            args '--mixin.config', 'mixins.aedynamics.json'
         }
 
         data {
@@ -63,6 +67,11 @@ minecraft {
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
         }
     }
+}
+
+mixin {
+    add sourceSets.main, "mixins.aedynamics.refmap.json"
+    config "mixins.aedynamics.json"
 }
 
 sourceSets {
