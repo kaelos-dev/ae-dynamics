@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.kaelos.aedynamics.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.aedynamics.refmap.json",
+  "mixins": [
+    "MixinBasicCellInventory"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
