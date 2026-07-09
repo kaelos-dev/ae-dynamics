@@ -7,7 +7,10 @@
   "mixins": [
     "MixinBasicCellInventory"
   ],
-  "client": [],
+  "client": [
+    "client.BuiltInModelHooksAccessor",
+    "client.ModelBakeryMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

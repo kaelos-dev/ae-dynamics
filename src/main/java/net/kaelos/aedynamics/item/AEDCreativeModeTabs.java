@@ -1,6 +1,7 @@
 package net.kaelos.aedynamics.item;
 
 import net.kaelos.aedynamics.AED;
+import net.kaelos.aedynamics.block.AEDBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -17,6 +18,8 @@ public class AEDCreativeModeTabs {
                     .title(Component.translatable("itemGroup." + AED.MOD_ID + ".main"))
                     .icon(() -> new ItemStack(AEDItems.ADVANCED_ITEM_CELL_HOUSING.get()))
                     .displayItems((displayParameters, output) -> {
+                        output.accept(AEDItems.EMPIRITIC_CRYSTAL.get());
+
                         output.accept(AEDItems.CELL_COMPONENT_1024K.get());
                         output.accept(AEDItems.CELL_COMPONENT_4096K.get());
                         output.accept(AEDItems.CELL_COMPONENT_16384K.get());
@@ -29,6 +32,12 @@ public class AEDCreativeModeTabs {
                         output.accept(AEDItems.ITEM_STORAGE_CELL_16384K.get());
                         output.accept(AEDItems.ITEM_STORAGE_CELL_65536K.get());
                         output.accept(AEDItems.ITEM_STORAGE_CELL_262144K.get());
+
+                        output.accept(AEDBlocks.CRAFTING_STORAGE_1024K.get());
+                        output.accept(AEDBlocks.CRAFTING_STORAGE_4096K.get());
+                        output.accept(AEDBlocks.CRAFTING_STORAGE_16384K.get());
+                        output.accept(AEDBlocks.CRAFTING_STORAGE_65536K.get());
+                        output.accept(AEDBlocks.CRAFTING_STORAGE_262144K.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {
