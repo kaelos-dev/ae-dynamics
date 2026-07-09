@@ -1,0 +1,19 @@
+{
+  "itemGroup.aedynamics.main": "AE Dynamics",
+
+  "item.aedynamics.cell_component_1024k": "1024К МЭ компонент хранения",
+  "item.aedynamics.cell_component_4096k": "4096К МЭ компонент хранения",
+  "item.aedynamics.cell_component_16384k": "16384К МЭ компонент хранения",
+  "item.aedynamics.cell_component_65536k": "65536К МЭ компонент хранения",
+  "item.aedynamics.cell_component_262144k": "262144К МЭ компонент хранения",
+
+  "item.aedynamics.item_storage_cell_1024k": "1024К МЭ предметная ячейка хранения",
+  "item.aedynamics.item_storage_cell_4096k": "4096К МЭ предметная ячейка хранения",
+  "item.aedynamics.item_storage_cell_16384k": "16384К МЭ предметная ячейка хранения",
+  "item.aedynamics.item_storage_cell_65536k": "65536К МЭ предметная ячейка хранения",
+  "item.aedynamics.item_storage_cell_262144k": "262144К МЭ предметная ячейка хранения",
+
+  "item.aedynamics.advanced_item_cell_housing": "МЭ продвинутый корпус для предметной ячейки",
+
+  "gui.aedynamics.types_infinity": "Бесконечности"
+}

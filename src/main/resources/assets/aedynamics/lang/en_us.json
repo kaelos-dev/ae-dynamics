@@ -1,0 +1,19 @@
+{
+  "itemGroup.aedynamics.main": "AE Dynamics",
+
+  "item.aedynamics.cell_component_1024k": "1024K ME Storage Component",
+  "item.aedynamics.cell_component_4096k": "4096K ME Storage Component",
+  "item.aedynamics.cell_component_16384k": "16384K ME Storage Component",
+  "item.aedynamics.cell_component_65536k": "65536K ME Storage Component",
+  "item.aedynamics.cell_component_262144k": "262144K ME Storage Component",
+
+  "item.aedynamics.item_storage_cell_1024k": "1024K ME Item Storage Cell",
+  "item.aedynamics.item_storage_cell_4096k": "4096K ME Item Storage Cell",
+  "item.aedynamics.item_storage_cell_16384k": "16384K ME Item Storage Cell",
+  "item.aedynamics.item_storage_cell_65536k": "65536K ME Item Storage Cell",
+  "item.aedynamics.item_storage_cell_262144k": "262144K ME Item Storage Cell",
+
+  "item.aedynamics.advanced_item_cell_housing": "ME Advanced Item Cell Housing",
+
+  "gui.aedynamics.types_infinity": "Infinity"
+}
