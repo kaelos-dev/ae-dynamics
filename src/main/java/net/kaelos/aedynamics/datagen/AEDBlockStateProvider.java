@@ -24,6 +24,8 @@ public class AEDBlockStateProvider extends BlockStateProvider {
         craftingStorage(AEDBlocks.CRAFTING_STORAGE_16384K.get());
         craftingStorage(AEDBlocks.CRAFTING_STORAGE_65536K.get());
         craftingStorage(AEDBlocks.CRAFTING_STORAGE_262144K.get());
+
+        pathBlock(AEDBlocks.ADVANCED_CRAFTING_UNIT.get(), "crafting");
     }
 
     private void craftingStorage(Block block) {
@@ -44,5 +46,12 @@ public class AEDBlockStateProvider extends BlockStateProvider {
                 .modelForState().modelFile(formedModel).addModel();
 
         simpleBlockItem(block, unformedModel);
+    }
+
+    private void pathBlock(Block block, String path) {
+        String nameBlock = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath();
+        var model = models().cubeAll(nameBlock, modLoc("block/" + path + "/" + nameBlock));
+        simpleBlock(block, model);
+        simpleBlockItem(block, model);
     }
 }
