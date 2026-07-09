@@ -11,6 +11,5 @@ public class AEDBlockStateProvider extends BlockStateProvider {
     }
 
     @Override
-    protected void registerStatesAndModels() {
-    }
+    protected void registerStatesAndModels() {}
 }
