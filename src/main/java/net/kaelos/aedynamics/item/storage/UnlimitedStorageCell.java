@@ -41,7 +41,7 @@ public class UnlimitedStorageCell extends Item implements IBasicCellItem {
     private final AEKeyType keyType;
 
     public UnlimitedStorageCell(Properties properties, ItemLike coreItem, ItemLike housingItem, double idleDrain, int totalBytes, int bytesPerType, AEKeyType keyType) {
-        super(properties);
+        super(properties.stacksTo(1));
         this.coreItem = coreItem;
         this.housingItem = housingItem;
         this.idleDrain = idleDrain;
