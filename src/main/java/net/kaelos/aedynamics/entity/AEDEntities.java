@@ -2,10 +2,14 @@ package net.kaelos.aedynamics.entity;
 
 import appeng.block.AEBaseEntityBlock;
 import appeng.blockentity.AEBaseBlockEntity;
+import appeng.blockentity.ClientTickingBlockEntity;
+import appeng.blockentity.ServerTickingBlockEntity;
 import appeng.blockentity.crafting.CraftingBlockEntity;
+import com.google.common.base.Preconditions;
 import net.kaelos.aedynamics.AED;
 import net.kaelos.aedynamics.block.AEDBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -32,37 +36,51 @@ public class AEDEntities {
     );
 
     @SafeVarargs
-    public static <T extends AEBaseBlockEntity> RegistryObject<BlockEntityType<T>> create(String id, Class<T> entityClass, BlockEntityFactory<T> factory, RegistryObject<? extends AEBaseEntityBlock<?>>... blockObject) {
+    public static <T extends AEBaseBlockEntity> RegistryObject<BlockEntityType<T>> create(String id, Class<T> entityClass, BlockEntityFactory<T> factory, RegistryObject<? extends AEBaseEntityBlock<?>>... blockObjects) {
+        Preconditions.checkArgument(blockObjects.length > 0, "Must provide at least one block!");
+
         return BLOCK_ENTITIES.register(id, () -> {
-            AEBaseEntityBlock<?>[] blocks = Arrays.stream(blockObject)
+            AEBaseEntityBlock<?>[] blocks = Arrays.stream(blockObjects)
                     .map(RegistryObject::get)
                     .toArray(AEBaseEntityBlock[]::new);
 
             AtomicReference<BlockEntityType<T>> typeHolder = new AtomicReference<>();
-            BlockEntityType<T> type = BlockEntityType.Builder.of(
-                    (blockPos, blockState) -> factory.create(typeHolder.get(), blockPos, blockState),
-                    blocks
-            ).build(null);
+            BlockEntityType.BlockEntitySupplier<T> supplier = (blockPos, blockState) ->
+                    factory.create(typeHolder.get(), blockPos, blockState);
 
+            BlockEntityType<T> type = BlockEntityType.Builder.of(supplier, blocks).build(null);
             typeHolder.set(type);
 
             AEBaseBlockEntity.registerBlockEntityItem(type, blocks[0].asItem());
 
-            for (AEBaseEntityBlock<?> block : blocks) {
-                @SuppressWarnings("unchecked")
-                AEBaseEntityBlock<T> typedBlock = (AEBaseEntityBlock<T>) block;
-                typedBlock.setBlockEntity(entityClass, type, null, null);
+            BlockEntityTicker<T> serverTicker = null;
+            if (ServerTickingBlockEntity.class.isAssignableFrom(entityClass)) {
+                serverTicker = (level, pos, state, entity) -> {
+                    ((ServerTickingBlockEntity) entity).serverTick();;
+                };
+            }
+
+            BlockEntityTicker<T> clientTicker = null;
+            if (ClientTickingBlockEntity.class.isAssignableFrom(entityClass)) {
+                clientTicker = (level, pos, state, entity) -> {
+                    ((ClientTickingBlockEntity) entity).clientTick();
+                };
+            }
+
+            for (var block : blocks) {
+                AEBaseEntityBlock<T> baseBlock = (AEBaseEntityBlock<T>) block;
+                baseBlock.setBlockEntity(entityClass, type, clientTicker, serverTicker);
             }
 
             return type;
         });
     }
 
-    public static void register(IEventBus eventBus) {
-        BLOCK_ENTITIES.register(eventBus);
-    }
-
     public interface BlockEntityFactory<T extends AEBaseBlockEntity> {
         T create(BlockEntityType<T> type, BlockPos pos, BlockState state);
+    }
+
+    public static void register(IEventBus eventBus) {
+        BLOCK_ENTITIES.register(eventBus);
     }
 }
