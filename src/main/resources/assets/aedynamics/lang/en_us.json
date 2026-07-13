@@ -1,19 +1,36 @@
 {
   "itemGroup.aedynamics.main": "AE Dynamics",
 
-  "item.aedynamics.cell_component_1024k": "1024K ME Storage Component",
-  "item.aedynamics.cell_component_4096k": "4096K ME Storage Component",
-  "item.aedynamics.cell_component_16384k": "16384K ME Storage Component",
-  "item.aedynamics.cell_component_65536k": "65536K ME Storage Component",
-  "item.aedynamics.cell_component_262144k": "262144K ME Storage Component",
+  "item.aedynamics.cell_component_1024k": "1M ME Storage Component",
+  "item.aedynamics.cell_component_4096k": "4M ME Storage Component",
+  "item.aedynamics.cell_component_16384k": "16M ME Storage Component",
+  "item.aedynamics.cell_component_65536k": "64M ME Storage Component",
+  "item.aedynamics.cell_component_262144k": "256M ME Storage Component",
 
-  "item.aedynamics.item_storage_cell_1024k": "1024K ME Item Storage Cell",
-  "item.aedynamics.item_storage_cell_4096k": "4096K ME Item Storage Cell",
-  "item.aedynamics.item_storage_cell_16384k": "16384K ME Item Storage Cell",
-  "item.aedynamics.item_storage_cell_65536k": "65536K ME Item Storage Cell",
-  "item.aedynamics.item_storage_cell_262144k": "262144K ME Item Storage Cell",
-
+  "item.aedynamics.item_storage_cell_1024k": "1M ME Item Storage Cell",
+  "item.aedynamics.item_storage_cell_4096k": "4M ME Item Storage Cell",
+  "item.aedynamics.item_storage_cell_16384k": "16M ME Item Storage Cell",
+  "item.aedynamics.item_storage_cell_65536k": "64M ME Item Storage Cell",
+  "item.aedynamics.item_storage_cell_262144k": "256M ME Item Storage Cell",
   "item.aedynamics.advanced_item_cell_housing": "ME Advanced Item Cell Housing",
 
-  "gui.aedynamics.types_infinity": "Infinity"
+  "item.aedynamics.electrite_dust": "Electrite Dust",
+  "item.aedynamics.electrite_ingot": "Electrite Ingot",
+  "item.aedynamics.empiritic_crystal": "Empiritic Crystal",
+  "item.aedynamics.empiritic_dust": "Empiritic Dust",
+  "item.aedynamics.printed_empiritic_processor": "Printed Empiritic Circuit",
+  "item.aedynamics.empiritic_processor": "Empiritic Processor",
+
+  "item.aedynamics.molecular_stack": "Molecular Stack Card",
+  "item.aedynamics.advanced_speed_card": "Advanced Acceleration Card",
+
+  "block.aedynamics.advanced_crafting_unit": "Advanced Crafting Unit",
+  "block.aedynamics.crafting_storage_1024k": "1M Crafting Storage",
+  "block.aedynamics.crafting_storage_4096k": "4M Crafting Storage",
+  "block.aedynamics.crafting_storage_16384k": "16M Crafting Storage",
+  "block.aedynamics.crafting_storage_65536k": "64M Crafting Storage",
+  "block.aedynamics.crafting_storage_262144k": "256M Crafting Storage",
+
+  "gui.aedynamics.types_infinity": "Infinity",
+  "gui.aedynamics.molecular_stack": "Allows machines to process items by the stack"
 }
