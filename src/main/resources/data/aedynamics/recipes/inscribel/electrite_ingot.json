@@ -1,0 +1,18 @@
+{
+  "type": "ae2:inscriber",
+  "ingredients": {
+    "bottom": {
+      "item": "aedynamics:electrite_dust"
+    },
+    "middle": {
+      "item": "minecraft:iron_ingot"
+    },
+    "top": {
+      "item": "aedynamics:empiritic_dust"
+    }
+  },
+  "mode": "press",
+  "result": {
+    "item": "aedynamics:electrite_ingot"
+  }
+}

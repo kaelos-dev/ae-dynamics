@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "CDC",
+    "ACA"
+  ],
+  "key": {
+    "A": { "item": "aedynamics:electrite_dust" },
+    "B": { "item": "aedynamics:empiritic_processor" },
+    "C": { "item": "ae2:cell_component_256k" },
+    "D": { "item": "ae2:quartz_glass" }
+  },
+  "result": {
+    "item": "aedynamics:cell_component_1024k"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "DCE",
+    "ABA"
+  ],
+  "key": {
+    "A": { "item": "aedynamics:electrite_ingot" },
+    "B": { "item": "aedynamics:empiritic_processor" },
+    "C": { "item": "ae2:crafting_unit" },
+    "D": { "item": "aedynamics:empiritic_dust" },
+    "E": { "item": "aedynamics:electrite_dust" }
+  },
+  "result": {
+    "item": "aedynamics:advanced_crafting_unit"
+  }
+}

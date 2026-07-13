@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "aedynamics:advanced_crafting_unit" },
+    { "item": "aedynamics:cell_component_65536k" }
+  ],
+  "result": {
+    "item": "aedynamics:crafting_storage_65536k"
+  }
+}

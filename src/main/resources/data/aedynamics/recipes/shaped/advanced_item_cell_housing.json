@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "BCB",
+    "DDD"
+  ],
+  "key": {
+    "A": { "item": "ae2:quartz_glass" },
+    "B": { "item": "aedynamics:electrite_dust" },
+    "C": { "item": "ae2:item_cell_housing" },
+    "D": { "item": "aedynamics:electrite_ingot" }
+  },
+  "result": {
+    "item": "aedynamics:advanced_item_cell_housing"
+  }
+}

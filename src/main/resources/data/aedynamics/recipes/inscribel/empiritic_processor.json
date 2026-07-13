@@ -1,0 +1,18 @@
+{
+  "type": "ae2:inscriber",
+  "ingredients": {
+    "bottom": {
+      "item": "ae2:printed_silicon"
+    },
+    "middle": {
+      "item": "aedynamics:electrite_dust"
+    },
+    "top": {
+      "item": "aedynamics:printed_empiritic_processor"
+    }
+  },
+  "mode": "press",
+  "result": {
+    "item": "aedynamics:empiritic_processor"
+  }
+}

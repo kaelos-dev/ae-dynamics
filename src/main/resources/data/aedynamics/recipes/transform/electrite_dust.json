@@ -1,0 +1,25 @@
+{
+  "type": "ae2:transform",
+  "circumstance": {
+    "type": "fluid",
+    "tag": "minecraft:water"
+  },
+  "ingredients": [
+    {
+      "item": "aedynamics:empiritic_dust"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    },
+    {
+      "item": "ae2:certus_quartz_dust"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "aedynamics:electrite_dust"
+  }
+}

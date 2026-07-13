@@ -1,0 +1,9 @@
+{
+  "type": "ae2:charger",
+  "ingredient": {
+    "item": "ae2:fluix_crystal"
+  },
+  "result": {
+    "item": "aedynamics:empiritic_crystal"
+  }
+}

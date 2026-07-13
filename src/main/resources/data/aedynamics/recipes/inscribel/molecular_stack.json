@@ -1,0 +1,18 @@
+{
+  "type": "ae2:inscriber",
+  "ingredients": {
+    "bottom": {
+      "item": "aedynamics:cell_component_262144k"
+    },
+    "middle": {
+      "item": "aedynamics:empiritic_processor"
+    },
+    "top": {
+      "item": "aedynamics:advanced_speed_card"
+    }
+  },
+  "mode": "press",
+  "result": {
+    "item": "aedynamics:molecular_stack"
+  }
+}

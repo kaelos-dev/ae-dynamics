@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "key": {
+    "A": { "item": "ae2:speed_card" },
+    "B": { "item": "aedynamics:electrite_ingot" },
+    "C": { "item": "aedynamics:empiritic_processor" }
+  },
+  "result": {
+    "item": "aedynamics:advanced_speed_card"
+  }
+}
