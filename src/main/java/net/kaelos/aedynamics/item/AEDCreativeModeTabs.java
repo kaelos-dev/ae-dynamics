@@ -13,12 +13,21 @@ import net.minecraftforge.registries.RegistryObject;
 public class AEDCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AED.MOD_ID);
 
+    @SuppressWarnings("unused")
     public static final RegistryObject<CreativeModeTab> MAIN = TABS.register("main",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup." + AED.MOD_ID + ".main"))
                     .icon(() -> new ItemStack(AEDItems.ADVANCED_ITEM_CELL_HOUSING.get()))
                     .displayItems((displayParameters, output) -> {
+                        output.accept(AEDItems.ELECTRITE_DUST.get());
+                        output.accept(AEDItems.ELECTRITE_INGOT.get());
+
                         output.accept(AEDItems.EMPIRITIC_CRYSTAL.get());
+                        output.accept(AEDItems.EMPIRITIC_DUST.get());
+                        output.accept(AEDItems.PRINTED_EMPIRITIC_PROCESSOR.get());
+                        output.accept(AEDItems.EMPIRITIC_PROCESSOR.get());
+                        output.accept(AEDItems.MOLECULAR_STACK.get());
+                        output.accept(AEDItems.ADVANCED_SPEED_CARD.get());
 
                         output.accept(AEDItems.CELL_COMPONENT_1024K.get());
                         output.accept(AEDItems.CELL_COMPONENT_4096K.get());
@@ -33,6 +42,7 @@ public class AEDCreativeModeTabs {
                         output.accept(AEDItems.ITEM_STORAGE_CELL_65536K.get());
                         output.accept(AEDItems.ITEM_STORAGE_CELL_262144K.get());
 
+                        output.accept(AEDBlocks.ADVANCED_CRAFTING_UNIT.get());
                         output.accept(AEDBlocks.CRAFTING_STORAGE_1024K.get());
                         output.accept(AEDBlocks.CRAFTING_STORAGE_4096K.get());
                         output.accept(AEDBlocks.CRAFTING_STORAGE_16384K.get());

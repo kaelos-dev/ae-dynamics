@@ -30,6 +30,17 @@ public class AEDItemModelProvider extends ItemModelProvider {
         pathItem(AEDItems.ITEM_STORAGE_CELL_16384K.get(), "cell");
         pathItem(AEDItems.ITEM_STORAGE_CELL_65536K.get(), "cell");
         pathItem(AEDItems.ITEM_STORAGE_CELL_262144K.get(), "cell");
+
+        pathItem(AEDItems.EMPIRITIC_CRYSTAL.get(), "crystal");
+        pathItem(AEDItems.EMPIRITIC_DUST.get(), "crystal");
+        pathItem(AEDItems.PRINTED_EMPIRITIC_PROCESSOR.get(), "processor");
+        pathItem(AEDItems.EMPIRITIC_PROCESSOR.get(), "processor");
+
+        pathItem(AEDItems.MOLECULAR_STACK.get(), "upgrade");
+        pathItem(AEDItems.ADVANCED_SPEED_CARD.get(), "upgrade");
+
+        pathItem(AEDItems.ELECTRITE_DUST.get(), "material");
+        pathItem(AEDItems.ELECTRITE_INGOT.get(), "material");
     }
 
     private void pathItem(Item item, String path) {

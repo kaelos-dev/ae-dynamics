@@ -1,14 +1,25 @@
 package net.kaelos.aedynamics.item;
 
 import appeng.api.stacks.AEKeyType;
+import appeng.api.upgrades.Upgrades;
 import appeng.items.materials.StorageComponentItem;
+import appeng.items.materials.UpgradeCardItem;
 import net.kaelos.aedynamics.AED;
 import net.kaelos.aedynamics.item.storage.UnlimitedStorageCell;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 public class AEDItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, AED.MOD_ID);
@@ -36,7 +47,34 @@ public class AEDItems {
     public static final RegistryObject<UnlimitedStorageCell> ITEM_STORAGE_CELL_65536K = ITEMS.register("item_storage_cell_65536k",
             () -> new UnlimitedStorageCell(new Item.Properties(), CELL_COMPONENT_65536K.get(), ADVANCED_ITEM_CELL_HOUSING.get(), 4.5, 65536, 524288, AEKeyType.items()));
     public static final RegistryObject<UnlimitedStorageCell> ITEM_STORAGE_CELL_262144K = ITEMS.register("item_storage_cell_262144k",
-            () -> new UnlimitedStorageCell(new Item.Properties(), CELL_COMPONENT_65536K.get(), ADVANCED_ITEM_CELL_HOUSING.get(), 5.0, 262144, 2097152, AEKeyType.items()));
+            () -> new UnlimitedStorageCell(new Item.Properties(), CELL_COMPONENT_262144K.get(), ADVANCED_ITEM_CELL_HOUSING.get(), 5.0, 262144, 2097152, AEKeyType.items()));
+
+    public static final RegistryObject<Item> EMPIRITIC_CRYSTAL = ITEMS.register("empiritic_crystal",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> EMPIRITIC_DUST = ITEMS.register("empiritic_dust",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PRINTED_EMPIRITIC_PROCESSOR = ITEMS.register("printed_empiritic_processor",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> EMPIRITIC_PROCESSOR = ITEMS.register("empiritic_processor",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ELECTRITE_DUST = ITEMS.register("electrite_dust",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ELECTRITE_INGOT = ITEMS.register("electrite_ingot",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> MOLECULAR_STACK = ITEMS.register("molecular_stack",
+            () -> new UpgradeCardItem(new Item.Properties().stacksTo(16)) {
+                    @OnlyIn(Dist.CLIENT)
+                    @Override
+                    public void appendHoverText(ItemStack stack, Level level, List<Component> lines, TooltipFlag advancedTooltips) {
+                        super.appendHoverText(stack, level, lines, advancedTooltips);
+                        lines.add(Component.empty());
+                        lines.add(Component.translatable("gui." + AED.MOD_ID + ".molecular_stack").withStyle(ChatFormatting.GRAY));
+                    }
+                });
+    public static final RegistryObject<Item> ADVANCED_SPEED_CARD = ITEMS.register("advanced_speed_card",
+            () -> Upgrades.createUpgradeCardItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
