@@ -63,7 +63,7 @@ public class AEDItems {
     public static final RegistryObject<Item> ELECTRITE_INGOT = ITEMS.register("electrite_ingot",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> MOLECULAR_STACK = ITEMS.register("molecular_stack",
+    public static final RegistryObject<Item> MOLECULAR_STACK_CARD = ITEMS.register("molecular_stack_card",
             () -> new UpgradeCardItem(new Item.Properties().stacksTo(16)) {
                     @OnlyIn(Dist.CLIENT)
                     @Override
@@ -74,6 +74,8 @@ public class AEDItems {
                     }
                 });
     public static final RegistryObject<Item> ADVANCED_SPEED_CARD = ITEMS.register("advanced_speed_card",
+            () -> Upgrades.createUpgradeCardItem(new Item.Properties()));
+    public static final RegistryObject<Item> EXPANSION_CARD = ITEMS.register("expansion_card",
             () -> Upgrades.createUpgradeCardItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
