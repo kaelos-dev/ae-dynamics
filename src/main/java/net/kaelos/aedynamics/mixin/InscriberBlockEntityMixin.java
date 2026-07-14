@@ -53,7 +53,7 @@ public abstract class InscriberBlockEntityMixin extends AENetworkPowerBlockEntit
             cancellable = true
     )
     private void onTickingRequest(IGridNode node, int ticksSinceLastCall, CallbackInfoReturnable<TickRateModulation> cir) {
-        int stackUpgradesCount = this.getUpgrades().getInstalledUpgrades(AEDItems.MOLECULAR_STACK.get());
+        int stackUpgradesCount = this.getUpgrades().getInstalledUpgrades(AEDItems.MOLECULAR_STACK_CARD.get());
 
         if (stackUpgradesCount == 0) {
             return;

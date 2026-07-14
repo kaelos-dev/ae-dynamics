@@ -21,8 +21,9 @@
   "item.aedynamics.printed_empiritic_processor": "Printed Empiritic Circuit",
   "item.aedynamics.empiritic_processor": "Empiritic Processor",
 
-  "item.aedynamics.molecular_stack": "Molecular Stack Card",
+  "item.aedynamics.molecular_stack_card": "Molecular Stack Card",
   "item.aedynamics.advanced_speed_card": "Advanced Acceleration Card",
+  "item.aedynamics.expansion_card": "Expansion Card",
 
   "block.aedynamics.advanced_crafting_unit": "Advanced Crafting Unit",
   "block.aedynamics.crafting_storage_1024k": "1M Crafting Storage",
@@ -30,6 +31,8 @@
   "block.aedynamics.crafting_storage_16384k": "16M Crafting Storage",
   "block.aedynamics.crafting_storage_65536k": "64M Crafting Storage",
   "block.aedynamics.crafting_storage_262144k": "256M Crafting Storage",
+
+  "block.aedynamics.advanced_pattern_provider": "ME Advanced Pattern Provider",
 
   "gui.aedynamics.types_infinity": "Infinity",
   "gui.aedynamics.molecular_stack": "Allows machines to process items by the stack"

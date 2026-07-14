@@ -18,7 +18,7 @@ public abstract class IOBusPartMixin {
     private void onGetOperationsPerTick(CallbackInfoReturnable<Integer> cir) {
         IUpgradeableObject upgradeable = (IUpgradeableObject) this;
 
-        int stackUpgradesCount = upgradeable.getUpgrades().getInstalledUpgrades(AEDItems.MOLECULAR_STACK.get());
+        int stackUpgradesCount = upgradeable.getUpgrades().getInstalledUpgrades(AEDItems.MOLECULAR_STACK_CARD.get());
         if (stackUpgradesCount > 0) {
             cir.setReturnValue(Integer.MAX_VALUE);
             cir.cancel();

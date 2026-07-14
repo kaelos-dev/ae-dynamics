@@ -1,28 +1,29 @@
 {
   "itemGroup.aedynamics.main": "AE Dynamics",
 
-  "item.aedynamics.cell_component_1024k": "1024К МЭ компонент хранения",
-  "item.aedynamics.cell_component_4096k": "4096К МЭ компонент хранения",
-  "item.aedynamics.cell_component_16384k": "16384К МЭ компонент хранения",
-  "item.aedynamics.cell_component_65536k": "65536К МЭ компонент хранения",
-  "item.aedynamics.cell_component_262144k": "262144К МЭ компонент хранения",
+  "item.aedynamics.cell_component_1024k": "1М МЭ компонент хранения",
+  "item.aedynamics.cell_component_4096k": "4М МЭ компонент хранения",
+  "item.aedynamics.cell_component_16384k": "16М МЭ компонент хранения",
+  "item.aedynamics.cell_component_65536k": "64М МЭ компонент хранения",
+  "item.aedynamics.cell_component_262144k": "256М МЭ компонент хранения",
 
-  "item.aedynamics.item_storage_cell_1024k": "1024К МЭ предметная ячейка хранения",
-  "item.aedynamics.item_storage_cell_4096k": "4096К МЭ предметная ячейка хранения",
-  "item.aedynamics.item_storage_cell_16384k": "16384К МЭ предметная ячейка хранения",
-  "item.aedynamics.item_storage_cell_65536k": "65536К МЭ предметная ячейка хранения",
-  "item.aedynamics.item_storage_cell_262144k": "262144К МЭ предметная ячейка хранения",
+  "item.aedynamics.item_storage_cell_1024k": "1М МЭ предметная ячейка хранения",
+  "item.aedynamics.item_storage_cell_4096k": "4М МЭ предметная ячейка хранения",
+  "item.aedynamics.item_storage_cell_16384k": "16М МЭ предметная ячейка хранения",
+  "item.aedynamics.item_storage_cell_65536k": "64М МЭ предметная ячейка хранения",
+  "item.aedynamics.item_storage_cell_262144k": "256М МЭ предметная ячейка хранения",
   "item.aedynamics.advanced_item_cell_housing": "МЭ продвинутый корпус для предметной ячейки",
 
   "item.aedynamics.electrite_dust": "Электритовая пыль",
   "item.aedynamics.electrite_ingot": "Электритовый слиток",
-  "item.aedynamics.empiritic_crystal": "Эмпиритовый кристалл Crystal",
+  "item.aedynamics.empiritic_crystal": "Эмпиритовый кристалл",
   "item.aedynamics.empiritic_dust": "Эмпиритическая пыль",
   "item.aedynamics.printed_empiritic_processor": "Печатная эмпиритическая схема",
   "item.aedynamics.empiritic_processor": "Эмпиритический процессор",
 
-  "item.aedynamics.molecular_stack": "Карта молекулярный стек",
+  "item.aedynamics.molecular_stack_card": "Карта молекулярный стак",
   "item.aedynamics.advanced_speed_card": "Продвинутая карта ускорения",
+  "item.aedynamics.expansion_card": "Карта расширения",
 
   "block.aedynamics.advanced_crafting_unit": "Продвинутый блок создания",
   "block.aedynamics.crafting_storage_1024k": "Хранилище для изготовления 1М",
@@ -30,6 +31,8 @@
   "block.aedynamics.crafting_storage_16384k": "Хранилище для изготовления 16М",
   "block.aedynamics.crafting_storage_65536k": "Хранилище для изготовления 64М",
   "block.aedynamics.crafting_storage_262144k": "Хранилище для изготовления 256М",
+
+  "block.aedynamics.advanced_pattern_provider": "МЭ продвинутый поставщик шаблонов",
 
   "gui.aedynamics.types_infinity": "Бесконечности",
   "gui.aedynamics.molecular_stack": "Позволяет механизмам обрабатывать предметы стаками"
