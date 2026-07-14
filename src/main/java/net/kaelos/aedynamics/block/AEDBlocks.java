@@ -3,6 +3,7 @@ package net.kaelos.aedynamics.block;
 import appeng.block.crafting.CraftingUnitBlock;
 import net.kaelos.aedynamics.AED;
 import net.kaelos.aedynamics.block.crafting.AdvancedCraftingUnitType;
+import net.kaelos.aedynamics.block.crafting.AdvancedPatternProviderBlock;
 import net.kaelos.aedynamics.item.AEDItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -30,6 +31,9 @@ public class AEDBlocks {
             () -> new CraftingUnitBlock(AdvancedCraftingUnitType.STORAGE_65536));
     public static final RegistryObject<CraftingUnitBlock> CRAFTING_STORAGE_262144K = registerBlock("crafting_storage_262144k",
             () -> new CraftingUnitBlock(AdvancedCraftingUnitType.STORAGE_262144K));
+
+    public static final RegistryObject<AdvancedPatternProviderBlock> ADVANCED_PATTERN_PROVIDER = registerBlock("advanced_pattern_provider",
+            AdvancedPatternProviderBlock::new);
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

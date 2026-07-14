@@ -26,8 +26,10 @@ public class AEDCreativeModeTabs {
                         output.accept(AEDItems.EMPIRITIC_DUST.get());
                         output.accept(AEDItems.PRINTED_EMPIRITIC_PROCESSOR.get());
                         output.accept(AEDItems.EMPIRITIC_PROCESSOR.get());
-                        output.accept(AEDItems.MOLECULAR_STACK.get());
+
+                        output.accept(AEDItems.MOLECULAR_STACK_CARD.get());
                         output.accept(AEDItems.ADVANCED_SPEED_CARD.get());
+                        output.accept(AEDItems.EXPANSION_CARD.get());
 
                         output.accept(AEDItems.CELL_COMPONENT_1024K.get());
                         output.accept(AEDItems.CELL_COMPONENT_4096K.get());
@@ -48,6 +50,8 @@ public class AEDCreativeModeTabs {
                         output.accept(AEDBlocks.CRAFTING_STORAGE_16384K.get());
                         output.accept(AEDBlocks.CRAFTING_STORAGE_65536K.get());
                         output.accept(AEDBlocks.CRAFTING_STORAGE_262144K.get());
+
+                        output.accept(AEDBlocks.ADVANCED_PATTERN_PROVIDER.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

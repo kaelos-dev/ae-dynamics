@@ -8,6 +8,7 @@ import appeng.blockentity.crafting.CraftingBlockEntity;
 import com.google.common.base.Preconditions;
 import net.kaelos.aedynamics.AED;
 import net.kaelos.aedynamics.block.AEDBlocks;
+import net.kaelos.aedynamics.entity.crafting.AdvancedPatternProviderBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -20,6 +21,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
+@SuppressWarnings("unused")
 public class AEDEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, AED.MOD_ID);
 
@@ -33,6 +35,13 @@ public class AEDEntities {
             AEDBlocks.CRAFTING_STORAGE_16384K,
             AEDBlocks.CRAFTING_STORAGE_65536K,
             AEDBlocks.CRAFTING_STORAGE_262144K
+    );
+
+    public static final RegistryObject<BlockEntityType<AdvancedPatternProviderBlockEntity>> ADVANCED_PATTERN_PROVIDER_BE = create(
+            "advanced_pattern_provider_be",
+            AdvancedPatternProviderBlockEntity.class,
+            AdvancedPatternProviderBlockEntity::new,
+            AEDBlocks.ADVANCED_PATTERN_PROVIDER
     );
 
     @SafeVarargs

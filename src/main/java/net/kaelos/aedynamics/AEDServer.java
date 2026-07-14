@@ -3,6 +3,7 @@ package net.kaelos.aedynamics;
 import appeng.api.upgrades.Upgrades;
 import appeng.core.definitions.AEBlocks;
 import appeng.core.definitions.AEParts;
+import net.kaelos.aedynamics.block.AEDBlocks;
 import net.kaelos.aedynamics.item.AEDItems;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -14,15 +15,17 @@ public class AEDServer {
     @SubscribeEvent
     public static void onCommonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            Upgrades.add(AEDItems.MOLECULAR_STACK.get(), AEBlocks.INSCRIBER, 1);
-            Upgrades.add(AEDItems.MOLECULAR_STACK.get(), AEParts.EXPORT_BUS, 1);
-            Upgrades.add(AEDItems.MOLECULAR_STACK.get(), AEParts.IMPORT_BUS, 1);
+            Upgrades.add(AEDItems.MOLECULAR_STACK_CARD.get(), AEBlocks.INSCRIBER, 1);
+            Upgrades.add(AEDItems.MOLECULAR_STACK_CARD.get(), AEParts.EXPORT_BUS, 1);
+            Upgrades.add(AEDItems.MOLECULAR_STACK_CARD.get(), AEParts.IMPORT_BUS, 1);
 
             Upgrades.add(AEDItems.ADVANCED_SPEED_CARD.get(), AEBlocks.IO_PORT, 1);
             Upgrades.add(AEDItems.ADVANCED_SPEED_CARD.get(), AEParts.IMPORT_BUS, 1);
             Upgrades.add(AEDItems.ADVANCED_SPEED_CARD.get(), AEParts.EXPORT_BUS, 1);
             Upgrades.add(AEDItems.ADVANCED_SPEED_CARD.get(), AEBlocks.INSCRIBER, 1);
             Upgrades.add(AEDItems.ADVANCED_SPEED_CARD.get(), AEBlocks.MOLECULAR_ASSEMBLER, 1);
+
+            Upgrades.add(AEDItems.EXPANSION_CARD.get(), AEDBlocks.ADVANCED_PATTERN_PROVIDER.get(), 2);
         });
     }
 }

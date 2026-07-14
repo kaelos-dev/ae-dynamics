@@ -26,6 +26,7 @@ public class AEDBlockStateProvider extends BlockStateProvider {
         craftingStorage(AEDBlocks.CRAFTING_STORAGE_262144K.get());
 
         pathBlock(AEDBlocks.ADVANCED_CRAFTING_UNIT.get(), "crafting");
+        pathBlock(AEDBlocks.ADVANCED_PATTERN_PROVIDER.get(), "provider");
     }
 
     private void craftingStorage(Block block) {

@@ -5,6 +5,7 @@ import appeng.client.render.crafting.CraftingCubeModel;
 import appeng.hooks.BuiltInModelHooks;
 import net.kaelos.aedynamics.block.crafting.AdvancedCraftingUnitType;
 import net.kaelos.aedynamics.client.render.AdvancedCraftingUnitModelProvider;
+import net.kaelos.aedynamics.client.screen.AEDScreens;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;
 import net.minecraft.network.chat.Component;
@@ -22,6 +23,8 @@ public class AEDClient {
     @SubscribeEvent
     public static void onClientSetup(final FMLClientSetupEvent event) {
         registerModels();
+
+        event.enqueueWork(AEDScreens::init);
     }
 
     public static void registerModels() {
