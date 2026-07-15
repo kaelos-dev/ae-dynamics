@@ -25,6 +25,8 @@
   "item.aedynamics.advanced_speed_card": "Advanced Acceleration Card",
   "item.aedynamics.expansion_card": "Expansion Card",
 
+  "item.aedynamics.advanced_pattern_provider_part": "ME Advanced Pattern Provider",
+
   "block.aedynamics.advanced_crafting_unit": "Advanced Crafting Unit",
   "block.aedynamics.crafting_storage_1024k": "1M Crafting Storage",
   "block.aedynamics.crafting_storage_4096k": "4M Crafting Storage",

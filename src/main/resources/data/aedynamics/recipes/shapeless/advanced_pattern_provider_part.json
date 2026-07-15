@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "aedynamics:advanced_pattern_provider" }
+  ],
+  "result": {
+    "item": "aedynamics:advanced_pattern_provider_part"
+  }
+}
