@@ -1,0 +1,18 @@
+{
+  "type": "ae2:inscriber",
+  "ingredients": {
+    "bottom": {
+      "item": "aedynamics:empiritic_processor"
+    },
+    "middle": {
+      "item": "ae2:capacity_card"
+    },
+    "top": {
+      "item": "aedynamics:empiritic_crystal"
+    }
+  },
+  "mode": "press",
+  "result": {
+    "item": "aedynamics:expansion_card"
+  }
+}

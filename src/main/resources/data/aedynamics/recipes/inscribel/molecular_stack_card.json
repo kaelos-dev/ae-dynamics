@@ -5,14 +5,14 @@
       "item": "aedynamics:cell_component_262144k"
     },
     "middle": {
-      "item": "aedynamics:empiritic_processor"
+      "item": "aedynamics:advanced_speed_card"
     },
     "top": {
-      "item": "aedynamics:advanced_speed_card"
+      "item": "aedynamics:empiritic_processor"
     }
   },
-  "mode": "press",
+  "mode": "inscribe",
   "result": {
-    "item": "aedynamics:molecular_stack"
+    "item": "aedynamics:molecular_stack_card"
   }
 }
