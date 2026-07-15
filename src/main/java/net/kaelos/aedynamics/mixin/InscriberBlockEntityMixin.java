@@ -53,16 +53,17 @@ public abstract class InscriberBlockEntityMixin extends AENetworkPowerBlockEntit
             cancellable = true
     )
     private void onTickingRequest(IGridNode node, int ticksSinceLastCall, CallbackInfoReturnable<TickRateModulation> cir) {
-        int stackUpgradesCount = this.getUpgrades().getInstalledUpgrades(AEDItems.MOLECULAR_STACK_CARD.get());
+        int molecularStackCard = this.getUpgrades().getInstalledUpgrades(AEDItems.MOLECULAR_STACK_CARD.get());
+        int advancedSpeedCard = this.getUpgrades().getInstalledUpgrades(AEDItems.ADVANCED_SPEED_CARD.get());
 
-        if (stackUpgradesCount == 0) {
+        if (molecularStackCard == 0 && advancedSpeedCard == 0) {
             return;
         }
 
-        int maxBatchSize = 64;
+        int maxBatchSize = (molecularStackCard > 0) ? 64 : 1;
 
         if (this.isSmash()) {
-            this.finalStep++;
+            this.finalStep += (advancedSpeedCard > 0) ? 8 : 1;
             if (this.finalStep == 8) {
                 final InscriberRecipe out = this.getTask();
                 if (out != null) {
@@ -72,7 +73,7 @@ public abstract class InscriberBlockEntityMixin extends AENetworkPowerBlockEntit
                         ItemStack outputStack = out.getResultItem().copy();
                         outputStack.setCount(batchSize);
 
-                        if (this.sideItemHandler.insertItem(1, outputStack, false).isEmpty()) {
+                        if (this.sideItemHandler.insertItem(1, outputStack,false).isEmpty()) {
                             this.processingTime = 0;
 
                             if (out.getProcessType() == InscriberProcessType.PRESS) {
@@ -86,42 +87,41 @@ public abstract class InscriberBlockEntityMixin extends AENetworkPowerBlockEntit
                 }
 
                 this.saveChanges();
-            } else if (this.finalStep == 16) {
+            } else if (this.finalStep >= 16) {
                 this.finalStep = 0;
                 this.setSmash(false);
                 this.markForUpdate();
             }
         } else if (this.hasCraftWork()) {
-            getMainNode().ifPresent(grid -> {
-                IEnergyService eg = grid.getEnergyService();
-                IEnergySource src = this;
+            getMainNode().ifPresent(iGrid -> {
+                IEnergyService service = iGrid.getEnergyService();
+                IEnergySource source = this;
 
-                IUpgradeableObject upgradeable = (IUpgradeableObject) this;
-                int speedCards = upgradeable.getUpgrades().getInstalledUpgrades(AEDItems.ADVANCED_SPEED_CARD.get());
-                final int speedFactor = (speedCards > 0) ? Integer.MAX_VALUE : 2;
+                final int speedFactor = (advancedSpeedCard > 0) ? 1000 : 2;
 
-                final int powerConsumption = 10 * speedFactor * 10;
+                final int powerConsumption = 2 * speedFactor * 2;
                 final double powerThreshold = powerConsumption - 0.01;
 
                 double powerReq = this.extractAEPower(powerConsumption, Actionable.SIMULATE, PowerMultiplier.CONFIG);
 
                 if (powerReq <= powerThreshold) {
-                    src = eg;
-                    powerReq = eg.extractAEPower(powerConsumption, Actionable.SIMULATE, PowerMultiplier.CONFIG);
+                    source = service;
+                    powerReq = service.extractAEPower(powerConsumption, Actionable.SIMULATE, PowerMultiplier.CONFIG);
                 }
 
                 if (powerReq > powerThreshold) {
-                    src.extractAEPower(powerConsumption, Actionable.MODULATE, PowerMultiplier.CONFIG);
-                    this.processingTime += speedFactor;
+                    source.extractAEPower(powerConsumption, Actionable.MODULATE, PowerMultiplier.CONFIG);
+                    this.processingTime += (advancedSpeedCard > 0) ? this.getMaxProcessingTime() : speedFactor;
                 }
             });
 
-            if (this.processingTime > this.getMaxProcessingTime()) {
+            if (this.processingTime >= this.getMaxProcessingTime()) {
                 this.processingTime = this.getMaxProcessingTime();
 
                 final InscriberRecipe out = this.getTask();
                 if (out != null) {
                     int batchSize = calculateBatchSize(out, maxBatchSize);
+
                     if (batchSize > 0) {
                         ItemStack testOutput = out.getResultItem().copy();
                         testOutput.setCount(batchSize);

@@ -20,7 +20,7 @@ public abstract class IOBusPartMixin {
 
         int stackUpgradesCount = upgradeable.getUpgrades().getInstalledUpgrades(AEDItems.MOLECULAR_STACK_CARD.get());
         if (stackUpgradesCount > 0) {
-            cir.setReturnValue(Integer.MAX_VALUE);
+            cir.setReturnValue(50000);
             cir.cancel();
             return;
         }
