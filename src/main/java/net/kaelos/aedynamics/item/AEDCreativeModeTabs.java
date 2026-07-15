@@ -52,6 +52,7 @@ public class AEDCreativeModeTabs {
                         output.accept(AEDBlocks.CRAFTING_STORAGE_262144K.get());
 
                         output.accept(AEDBlocks.ADVANCED_PATTERN_PROVIDER.get());
+                        output.accept(AEDItems.ADVANCED_PATTERN_PROVIDER.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

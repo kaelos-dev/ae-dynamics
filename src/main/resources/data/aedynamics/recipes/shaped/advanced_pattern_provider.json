@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "CDC",
+    "ABA"
+  ],
+  "key": {
+    "A": { "item": "aedynamics:electrite_ingot" },
+    "B": { "item": "aedynamics:empiritic_processor" },
+    "C": { "item": "aedynamics:empiritic_dust" },
+    "D": { "item": "ae2:pattern_provider" }
+  },
+  "result": {
+    "item": "aedynamics:advanced_pattern_provider"
+  }
+}

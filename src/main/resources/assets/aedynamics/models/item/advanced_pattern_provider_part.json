@@ -1,0 +1,8 @@
+{
+  "parent": "ae2:item/cable_interface",
+  "textures": {
+    "sides": "aedynamics:part/advanced_pattern_provider_sides",
+    "back": "aedynamics:part/advanced_pattern_provider_back",
+    "front": "aedynamics:part/advanced_pattern_provider"
+  }
+}

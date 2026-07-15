@@ -1,10 +1,14 @@
 package net.kaelos.aedynamics.item;
 
+import appeng.api.parts.PartModels;
 import appeng.api.stacks.AEKeyType;
 import appeng.api.upgrades.Upgrades;
 import appeng.items.materials.StorageComponentItem;
 import appeng.items.materials.UpgradeCardItem;
+import appeng.items.parts.PartItem;
+import appeng.items.parts.PartModelsHelper;
 import net.kaelos.aedynamics.AED;
+import net.kaelos.aedynamics.entity.part.AdvancedPatternProviderPart;
 import net.kaelos.aedynamics.item.storage.UnlimitedStorageCell;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -77,6 +81,17 @@ public class AEDItems {
             () -> Upgrades.createUpgradeCardItem(new Item.Properties()));
     public static final RegistryObject<Item> EXPANSION_CARD = ITEMS.register("expansion_card",
             () -> Upgrades.createUpgradeCardItem(new Item.Properties()));
+
+    public static final RegistryObject<PartItem<AdvancedPatternProviderPart>> ADVANCED_PATTERN_PROVIDER = ITEMS.register("advanced_pattern_provider_part",
+            () -> {
+                PartModels.registerModels(PartModelsHelper.createModels(AdvancedPatternProviderPart.class));
+
+                return new PartItem<>(
+                        new Item.Properties(),
+                        AdvancedPatternProviderPart.class,
+                        AdvancedPatternProviderPart::new
+                );
+            });
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
