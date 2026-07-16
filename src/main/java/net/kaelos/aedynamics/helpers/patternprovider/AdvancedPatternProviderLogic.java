@@ -164,4 +164,37 @@ public class AdvancedPatternProviderLogic extends PatternProviderLogic {
             this.upgrades.readFromNBT(data, "AdvancedUpgrades");
         }
     }
+
+    @Override
+    public void addDrops(List<ItemStack> drops) {
+        super.addDrops(drops);
+
+        for (int i = 0; i < this.advancedPatternInv.size(); i++) {
+            ItemStack stack = this.advancedPatternInv.getStackInSlot(i);
+            if (!stack.isEmpty()) {
+                drops.add(stack);
+            }
+        }
+
+        for (int i = 0; i < this.upgrades.size(); i++) {
+            ItemStack stack = this.upgrades.getStackInSlot(i);
+            if (!stack.isEmpty()) {
+                drops.add(stack);
+            }
+        }
+
+        Level level = this.host.getBlockEntity().getLevel();
+        BlockPos pos = this.host.getBlockEntity().getBlockPos();
+        if (level != null && pos != null) {
+            this.advancedReturnInv.addDrops(drops, level, pos);
+        }
+    }
+
+    @Override
+    public void clearContent() {
+        super.clearContent();
+        this.advancedPatternInv.clear();
+        this.upgrades.clear();
+        this.advancedReturnInv.clear();
+    }
 }
